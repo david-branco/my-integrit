@@ -1,0 +1,46 @@
+#!/bin/bash
+# MyIntegrit
+#
+# description: 
+# Our implementation of application Integrit
+# Original: http://integrit.sourceforge.net/howto.html
+
+
+case "$1" in
+    target)
+        /bin/bash /usr/local/bin/myIntegrit/myintegrit-start.sh target $2
+    ;;
+    createdb)
+        /bin/bash /usr/local/bin/myIntegrit/myintegrit-start.sh createdb $2
+    ;;
+    reloaddb)
+        /bin/bash /usr/local/bin/myIntegrit/myintegrit-start.sh reloaddb
+    ;;
+    exportdb)
+        /bin/bash /usr/local/bin/myIntegrit/myintegrit-start.sh exportdb $2
+    ;;  
+    automatic)
+        if [ -z "$2" ]
+        then
+            /bin/bash /usr/local/bin/myIntegrit/myintegrit-start.sh automatic 60 &
+        else 
+            /bin/bash /usr/local/bin/myIntegrit/myintegrit-start.sh automatic $2 &
+        fi
+    ;;
+    restart)
+        /bin/bash /usr/local/bin/myIntegrit/myintegrit-stop.sh
+        if [ -z "$2" ]
+        then
+            /bin/bash /usr/local/bin/myIntegrit/myintegrit-start.sh automatic 60 &
+        else 
+            /bin/bash /usr/local/bin/myIntegrit/myintegrit-start.sh automatic $2 &
+        fi
+    ;;
+    stop)
+        /bin/bash /usr/local/bin/myIntegrit/myintegrit-stop.sh
+    ;;
+    * | help)
+        /bin/bash /usr/local/bin/myIntegrit/myintegrit-start.sh help
+    ;;
+esac
+exit 0

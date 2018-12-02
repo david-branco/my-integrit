@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="warn" name="MYAPP" packages="">
+    <Appenders>
+        <Syslog name="RFC5424" format="RFC5424" host="localhost" port="514"
+                protocol="TCP" appName="MyIntegrit" includeMDC="true"
+                facility="USER" enterpriseNumber="18060" newLine="true"
+                messageId="Audit" mdcId="mdc" id="App"
+                connectTimeoutMillis="1000" reconnectionDelayMillis="5000">
+            <LoggerFields>
+                <KeyValuePair key="thread" value="%t"/>
+                <KeyValuePair key="priority" value="%p"/>
+                <KeyValuePair key="category" value="%c"/>
+                <KeyValuePair key="exception" value="%ex"/>
+                <KeyValuePair key="message" value="%m"/>
+            </LoggerFields>
+        </Syslog>
+    </Appenders>
+    <Loggers>
+        <Logger name ="MYAPPLogger" level="info" />
+        <Root level="info">
+            <AppenderRef ref="RFC5424"/>
+        </Root>
+    </Loggers>
+</Configuration>
