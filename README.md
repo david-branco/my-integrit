@@ -14,7 +14,7 @@ The system has among its main functionalities:
 - Efficient and complete integration with bash and UNIX environment;
 - Among other features.
 
-[Representative Model](https://raw.githubusercontent.com/david-branco/my-integrit/master/diagrams/diagrama.png).
+[Representative Model](https://raw.githubusercontent.com/david-branco/my-integrit/master/diagram/diagrama.png)
 
 ---
 
@@ -33,4 +33,4 @@ O sistema possui entre as suas funcionalidades principais:
 - Integração eficiente e completa com a bash e ambiente Unix;
 - Entre outras funcionalidades.
 
-[Modelo Representativo](https://raw.githubusercontent.com/david-branco/my-integrit/master/diagrams/diagrama.png).
+[Modelo Representativo](https://raw.githubusercontent.com/david-branco/my-integrit/master/diagram/diagrama.png)
